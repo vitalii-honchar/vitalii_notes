@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Vitalii Notes {% endblock %}
+
+{% block content %}
+    {% if blog_post_list %}
+        {% for post in blog_post_list %}
+            <div class="card mt-2">
+                <div class="card-body d-flex">
+                    <a class="h5 text-decoration-none text-dark me-auto" href="{% url 'blog:blog_post' post.id %}">{{ post.title }}</a>
+                    <span class="fw-lighter">{{ post.published_date }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts</p>
+    {% endif %}
+{% endblock %}
