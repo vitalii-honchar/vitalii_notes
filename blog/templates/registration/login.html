@@ -1,0 +1,45 @@
+{% extends 'bootstrap5/bootstrap5.html' %}
+
+{% block bootstrap5_title %}
+    Vitalii Notes Login
+{% endblock %}
+
+{% load bootstrap5 %}
+
+{% block bootstrap5_content %}
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand h2" href="{% url 'blog:index' %}">Vitalii Notes</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+                <p>Your account doesn't have access to this page. To proceed,
+                    please login with an account that has access.</p>
+            {% else %}
+                <p>Please login to see this page.</p>
+            {% endif %}
+        {% endif %}
+
+        <form method="post" action="{% url 'blog:login' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'bootstrap5/bootstrap5.html' %}
+
+{% block bootstrap5_title %}
+    403 - Forbidden
+{% endblock %}
+
+{% load bootstrap5 %}
+
+{% block bootstrap5_content %}
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand h2" href="{% url 'blog:index' %}">Vitalii Notes</a>
+        </div>
+    </nav>
+    <div class="container">
+       <h2>403 - Forbidden</h2>
+    </div>
+{% endblock %}
