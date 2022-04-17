@@ -1,4 +1,9 @@
 {% extends 'bootstrap5/bootstrap5.html' %}
+{% load static %}
+
+{% block bootstrap5_extra_head %}
+    <link rel="icon" type="image/x-icon" href="{% static 'blog/favicon.png' %}">
+{% endblock %}
 
 {% block bootstrap5_title %}
     {% block title %}{% endblock %}
