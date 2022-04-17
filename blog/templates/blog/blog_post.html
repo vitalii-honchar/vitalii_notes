@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load markdownify %}
 
 {% block title %} {{ blogpost.title }} {% endblock %}
 
@@ -7,8 +8,7 @@
         <div class="card-body">
             <h2 class="text-center">{{ blogpost.title }}</h2>
             <p class="fw-lighter text-center">{{ blogpost.published_date }}</p>
-            <p>{{ blogpost.text }}</p>
-
+            <p>{{ blogpost.text|markdownify }}</p>
         </div>
     </div>
 {% endblock %}

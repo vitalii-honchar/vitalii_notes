@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'markdownify.apps.MarkdownifyConfig'
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,12 @@ USE_I18N = True
 
 USE_TZ = True
 
+MARKDOWNIFY_STRIP = False
+MARKDOWNIFY_WHITELIST_TAGS = {
+    'a', 'p',
+    'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7',
+    'ul', 'ol', 'li', 'span', 'br', 'table', 'td', 'tr', 'th'
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
