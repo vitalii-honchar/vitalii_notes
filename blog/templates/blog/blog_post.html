@@ -4,11 +4,14 @@
 {% block title %} {{ blogpost.title }} {% endblock %}
 
 {% block content %}
-    <div class="card mt-2">
-        <div class="card-body">
-            <h2 class="text-center">{{ blogpost.title }}</h2>
-            <p class="fw-lighter text-center">{{ blogpost.published_date }}</p>
-            <p>{{ blogpost.text|markdownify }}</p>
+    <div class="row mt-2 justify-content-center">
+        <div class="card col-md-8">
+            <div class="card-body">
+                <h2 class="text-center">{{ blogpost.title }}</h2>
+                <p class="fw-lighter text-center">{{ blogpost.published_date }}</p>
+                <p>{{ blogpost.text|markdownify }}</p>
+            </div>
         </div>
     </div>
+
 {% endblock %}
