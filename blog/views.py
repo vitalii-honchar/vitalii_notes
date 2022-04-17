@@ -1,5 +1,6 @@
 from django.views import generic
 from .models import BlogPost
+from .forms import LoginForm
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
@@ -27,3 +28,9 @@ class BlogPostView(LoginRequiredMixin, PermissionRequiredMixin, generic.DetailVi
 
 class BlogLogin(auth_views.LoginView):
     next_page = 'blog:index'
+    form_class = LoginForm
+
+
+class BlogLogout(auth_views.LogoutView):
+    template_name = 'registration/login.html'
+    next_page = 'blog:login'
