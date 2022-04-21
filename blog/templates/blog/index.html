@@ -8,7 +8,7 @@
             <div class="card col-md-8">
                 <div class="card-body d-flex">
                     <a class="h5 text-decoration-none text-dark me-auto" href="{% url 'blog:blog_post' post.id %}">{{ post.title }}</a>
-                    <span class="fw-lighter">{{ post.published_date }}</span>
+                    <span class="fw-lighter">{{ post.published_date|date:'d-m-Y' }}</span>
                 </div>
             </div>
         </div>

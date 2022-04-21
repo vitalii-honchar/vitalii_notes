@@ -8,7 +8,7 @@
         <div class="card col-md-8">
             <div class="card-body">
                 <h2 class="text-center">{{ blogpost.title }}</h2>
-                <p class="fw-lighter text-center">{{ blogpost.published_date }}</p>
+                <p class="fw-lighter text-center">{{ blogpost.published_date|date:'d-m-Y' }}</p>
                 <p>{{ blogpost.text|markdownify }}</p>
             </div>
         </div>
